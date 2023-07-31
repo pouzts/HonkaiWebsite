@@ -44,16 +44,16 @@ $MyHeader = "My Header";
     // Set style page
     switch ($myStyle) {
         case "1":
-            echo '<link rel="stylesheet" type="text/css"  href="/myStyle1.css">';
+            echo '<link rel="stylesheet" type="text/css"  href="/css/myStyle1.css">';
             break;
         case "2":
-            echo '<link rel="stylesheet" type="text/css"  href="/myStyle2.css">';
+            echo '<link rel="stylesheet" type="text/css"  href="/css/myStyle2.css">';
             break;
         case "3":
-            echo '<link rel="stylesheet" type="text/css"  href="/myStyle3.css">';
+            echo '<link rel="stylesheet" type="text/css"  href="/css/myStyle3.css">';
             break;
         default:
-            echo '<link rel="stylesheet" type="text/css"  href="/myStyle1.css">';
+            echo '<link rel="stylesheet" type="text/css"  href="/css/myStyle1.css">';
             break;
     }
     ?>
