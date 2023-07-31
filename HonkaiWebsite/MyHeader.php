@@ -1,7 +1,7 @@
 <?php
 session_start(); // Must be first, prior to any HTML. Session will expire
 
-include_once "dbConnector.php";
+include_once "DbConnector.php";
 include_once "Helper.php";
 
 ?>
