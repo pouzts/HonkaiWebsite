@@ -1,9 +1,10 @@
-﻿/**
+﻿/*
   Cream: #ffefc8
   Navy Blue: #182a38
   Gold: #dec176
 
   font: Roboto
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400;500;600;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
 */
 
 *{
@@ -36,8 +37,9 @@
 }
 
 body {
-  background-color: var(--color-one);
+  background-color: var(--color-one); /* Navy Blue */
+  font-family: "M PLUS 1 Code", sans-serif;
   font-size: 1.1rem;
-  color: var(--color-white);
+  color: var(--color-three); /* Cream */
   transition: var(--transition);
 }
