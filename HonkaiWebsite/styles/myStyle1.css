@@ -1,13 +1,4 @@
-﻿/*
-  Cream: #ffefc8
-  Navy Blue: #182a38
-  Gold: #dec176
-
-  font: Roboto
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400;500;600;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
-*/
-
-*{
+﻿*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -42,4 +33,23 @@ body {
   font-size: 1.1rem;
   color: var(--color-three); /* Cream */
   transition: var(--transition);
+}
+
+.menuItems {
+  overflow: hidden;
+  background-color: var(--color-three);
+  height: 3rem;
+  align-content: center;
+}
+
+.menuItems a{
+  color: var(--color-one);
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
+}
+
+.menuItems a:hover{
+  background-color: var(--color-grey-4);
+  color: var(--color-one);
 }
