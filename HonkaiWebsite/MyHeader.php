@@ -6,7 +6,7 @@ include_once "Helper.php";
 
 ?>
 
-<?php 
+<?php
 
 $myStyle = "1";
 
@@ -17,9 +17,7 @@ if (isset($_SESSION["isAdmin"]) == false) {
 // Check for style setting
 if (isset($_COOKIE["MyStyle"]) == true) {
     $myStyle = $_COOKIE["MyStyle"];
-}
-else
-{
+} else {
     // Set default style
     $_COOKIE["MyStyle"] = $myStyle;
 }
@@ -74,34 +72,34 @@ $MyHeader = "My Header";
     <!-- Get the menu items -->
     <!-- Add Box Around Menu Items -->
 
-    <center class="menuItems">
+    <div class="navBar">
 
 <?php
 $myDbConn = ConnGet();
 
 // $recordset = MyPagesAllGet($myDbConn); 
-$recordset = MyPagesGet($myDbConn, 0); 
+$recordset = MyPagesGet($myDbConn, 0);
 // Display the main menu
 MenuDisplay($recordset);
 mysqli_free_result($recordset);
 
 ?>
     <!-- Add a link for the custom settings -->
-    &nbsp; &nbsp;<a href="Preferences.php">My Preferences </a>
+    &nbsp; &nbsp;<a class="menuItems" href="Preferences.php">My Preferences </a>
 <?php
 
 // Add a Admin link if. . . 
 // $_SESSION["isAdmin"] = 1; // Cheat - Do not do this in your code. 
 if ($_SESSION["isAdmin"] == 1) {
-    echo '  &nbsp; &nbsp;<a href="ManagePages.php">Manage Pages</a>';
-}
-else {
-    echo '  &nbsp; &nbsp;<a href="Login.php">Login</a>';
+    echo '  &nbsp; &nbsp;<a class="menuItems" href="ManagePages.php">Manage Pages</a>';
+} else {
+    echo '  &nbsp; &nbsp;<a class="menuItems" href="Login.php">Login</a>';
 }
 
 
 ?>
-            </center>
+
+            </div>
 <br />
 <br />
 

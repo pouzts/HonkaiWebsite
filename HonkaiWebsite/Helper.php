@@ -1,5 +1,5 @@
 <?php
-// include_once "dbConnector.php";
+ include_once "dbConnector.php";
 ?>
 
 <?php
@@ -11,12 +11,12 @@ function MenuDisplay($dataset) {
     if ($dataset){
         // per.Fname, per.Lname, cel.Cell_Id, cel.CellNumber
         while($row = mysqli_fetch_array($dataset)){
-            echo ' &nbsp; &nbsp; <a href="Index.php?PageId=' . $row['id'] .  '" >' . $row['Title'] . '</a>';
+            echo ' &nbsp; &nbsp; <a class="menuItems" href="Index.php?PageId=' . $row['id'] .  '" >' . $row['Title'] . '</a>';
         }
     } // End if
     else {
         echo "No menu items<br />";
-        echo mysqli_error($myDbConn);
+        //echo mysqli_error($myDbConn);
     }
 
 }

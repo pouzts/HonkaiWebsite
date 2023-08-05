@@ -1,4 +1,4 @@
-﻿*{
+﻿* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -7,8 +7,9 @@
 
 :root {
   --color-one: #182a38; /* Navy Blue */
-  --color-two: #dec176; /* Gold */
-  --color-three: #ffefc8; /* Cream */
+  --color-two: #2B2A52; /* Purple */
+  --color-three: #dec176; /* Gold */
+  --color-four: #ffefc8; /* Cream */
 
   --color-white: #ffffff;
   --color-black: #000;
@@ -21,9 +22,7 @@
   --color-grey-6: #12181b; /* Darkest Grey */
 
   --box-shadow: 0 3px 15px rgba(0, 0, 0, .3);
-
   --br-sm: 14px;
-
   --transition: all 0.4s ease-in-out;
 }
 
@@ -31,25 +30,32 @@ body {
   background-color: var(--color-one); /* Navy Blue */
   font-family: "M PLUS 1 Code", sans-serif;
   font-size: 1.1rem;
-  color: var(--color-three); /* Cream */
+  color: var(--color-four); /* Cream */
   transition: var(--transition);
 }
 
 .menuItems {
-  overflow: hidden;
-  background-color: var(--color-three);
+  text-decoration: none;
+}
+
+.navBar {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 10px;
+
+  background-color: var(--color-four); /* Cream */
   height: 3rem;
   align-content: center;
 }
 
-.menuItems a{
-  color: var(--color-one);
-  text-align: center;
-  padding: 14px 16px;
-  font-size: 17px;
-}
+  .navBar a {
+    align-content: center;
+    color: var(--color-one); /* Navy Blue*/
+    text-align: center;
+    font-size: 20px;
+  }
 
-.menuItems a:hover{
-  background-color: var(--color-grey-4);
-  color: var(--color-one);
-}
+    .navBar a:hover {
+      background-color: var(--color-three); /* Gold */
+    }
