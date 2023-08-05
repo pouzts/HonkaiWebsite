@@ -27,8 +27,8 @@ function PageDisplay($PageData) {
         // per.Fname, per.Lname, cel.Cell_Id, cel.CellNumber
         $row = mysqli_fetch_array($PageData);
 
-        echo ' &nbsp; &nbsp; <h2> ' . $row['Header1'] .  ' </h2> <br />';
-        echo ' &nbsp; &nbsp; <p> ' . $row['Text1'] .  '</p> <br />';
+        echo ' &nbsp; &nbsp; <h2 class="pageTitle"> ' . $row['Header1'] .  ' </h2> <br />';
+        echo ' &nbsp; &nbsp; <p class="pageContent">' . $row['Text1'] .  '</p> <br />';
 
     } // End if
     else {

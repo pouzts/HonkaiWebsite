@@ -43,7 +43,6 @@ body {
   align-items: center;
   text-align: center;
   padding-top: 10px;
-
   background-color: var(--color-four); /* Cream */
   height: 3rem;
   align-content: center;
@@ -59,3 +58,12 @@ body {
     .navBar a:hover {
       background-color: var(--color-three); /* Gold */
     }
+
+.pageTitle {
+  text-align: center;
+}
+
+.pageContent {
+  padding-left: 25px;
+  padding-right: 25px;
+}
