@@ -23,7 +23,7 @@ if (isset($_COOKIE["MyStyle"]) == true) {
 }
 
 $myTitle = "Honkai Star Rail Team Builder";
-$MyHeader = "My Header";
+$MyHeader = "HSR Team Builder";
 
 ?>
 <!DOCTYPE html>
@@ -64,7 +64,7 @@ $MyHeader = "My Header";
 </head>
 <body>
  <center>
-<h1><?php echo $MyHeader ?></h1>
+<h1 class="pageHeader"><?php echo $MyHeader ?></h1>
 
  </center>
 

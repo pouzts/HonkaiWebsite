@@ -59,6 +59,10 @@ body {
       background-color: var(--color-three); /* Gold */
     }
 
+.pageHeader{
+  padding-top: 15px;
+}
+
 .pageTitle {
   text-align: center;
 }
@@ -66,4 +70,8 @@ body {
 .pageContent {
   padding-left: 25px;
   padding-right: 25px;
+}
+
+.cars{
+
 }
