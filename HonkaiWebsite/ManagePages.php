@@ -13,6 +13,6 @@ My sugestion: Create a Table that lists all the pages (records) in the database.
 Each link takes the person to a page where they can edit the content
 
 <?php
-include_once "MyHeader.php";
+include_once "MyFooter.php";
 ?>
 
