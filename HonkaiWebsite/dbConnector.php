@@ -72,7 +72,7 @@ function AddCharacterToDatabase($dbConn, $charName, $charRarity, $charElement, $
 }
 
 function RemoveCharacterToDatabase($dbConn, $Id){
-    $query = "Update FROM mycharacters set isActive = 0 where id = " . $Id;
+    $query = "Update `mytestdb`.`mycharacters` set isActive = 0 where id = " . $Id;
 
     return @mysqli_query($dbConn, $query);
 }

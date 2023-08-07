@@ -90,6 +90,7 @@ if ($_SESSION["isAdmin"] == 1) {
 }
 else {
     echo '  &nbsp; &nbsp;<a href="Login.php">Login</a>';
+    echo '  &nbsp; &nbsp;<a href="ManageCharacterPage.php">Manage Characters</a>';
 }
 
 
