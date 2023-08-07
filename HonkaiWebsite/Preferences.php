@@ -6,8 +6,12 @@ include_once "MyHeader.php";
 
 ?>
 
-Add code (form) to change style preferences. 
-
+<select name="cars" id="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
 <?php
 include_once "MyHeader.php";
 ?>
