@@ -16,6 +16,7 @@ function ConnGet() {
 
     return $dbConn;
 }
+
 // ///////////////////////////////////////////////////
 // Get Select records based on the Parent Id
 function MyPagesGet($dbConn, $Parent=0) {
@@ -51,10 +52,53 @@ return $return;
 
 // ///////////////////////////////////////////////////
 // Get all the page records
-function MyPageremove($dbConn, $Id) {
+function MyPageRemove($dbConn, $Id) {
 
     // Never delete a page. set it to incative
     $query = "Update FROM MyWebDocs set isActive = 0 where id = " . $Id;
+
+    return @mysqli_query($dbConn, $query);
+}
+
+function GetCharacterDataByID($dbConn, $Id){
+    $query = "select * from mycharacters where id = " . $Id . ";";
+
+    return @mysqli_query($dbConn, $query);
+}
+
+function GetAllCharacterData($dbConn) {
+    $query = "select * from mycharacters;";
+
+    return @mysqli_query($dbConn, $query);
+}
+
+function GetJsonFromDB($dbConn)
+{
+    $query = "SELECT JSON_OBJECT(
+        'jId', chara.Id,
+        'jName', chara.Name,
+        'jRarity', chara.Element,
+        'jPath', chara.Path,
+        'jAffiliation', chara.Affiliation,
+        ) AS Json1 FROM mycharacters chara;";
+
+    return @mysqli_query($dbConn, $query);
+}
+
+function AddCharacterToDatabase($dbConn, $charName, $charRarity, $charElement, $charPath, $charAffiliation){
+    $query = "INSERT INTO `mytestdb`.`mycharacters` (`name`, `rarity`, `element`, `path`, `affiliation`) VALUES ('" . $charName . "', '" . $charRarity . "', '" . $charElement . "', '" . $charPath . "', '" . $charAffiliation . "');";
+
+    return @mysqli_query($dbConn, $query);
+}
+
+function RemoveCharacterToDatabase($dbConn, $Id){
+    $query = "Update FROM mycharacters set isActive = 0 where id = " . $Id;
+
+    return @mysqli_query($dbConn, $query);
+}
+
+function EditDataForCharacter($dbConn, $Id, $charName, $charRarity, $charElement, $charPath, $charAffiliation){
+    $query = "UPDATE `mytestdb`.`mycharacters` SET `name` = '" . $charName . "', `rarity` = '" . $charRarity . "', `element` = '" . $charElement . "', `path` = '" . $charPath . "', `affiliation` = '" . $charAffiliation . "' WHERE (`id` = '" . $Id . "');";
 
     return @mysqli_query($dbConn, $query);
 }
