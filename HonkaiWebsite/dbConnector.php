@@ -2,7 +2,7 @@
 
 // Create constants
 DEFINE ('DB_USER', 'root');
-DEFINE ('DB_PSWD', 'password');
+DEFINE ('DB_PSWD', 'KillerQueenOfHell280!');
 DEFINE ('DB_SERVER', 'localhost');
 DEFINE ('DB_NAME', 'mytestdb');
 

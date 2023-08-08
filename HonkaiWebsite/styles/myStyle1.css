@@ -72,6 +72,49 @@ body {
   padding-right: 25px;
 }
 
-.cars{
-
+.manageCharacters {
+  padding-left: 550px;
+  padding-bottom: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-auto-rows: 25px;
+  row-gap: 15px;
 }
+
+  .manageCharacters input {
+    font-family: "M PLUS 1 Code", sans-serif;
+    font-size: 1.1rem;
+    height: 30px;
+    width: 250px;
+    border: none;
+  }
+
+.manageButtons button {
+  background-color: var(--color-four);
+  color: var(--color-one);
+  border: none;
+  font-size: 1.1rem;
+  height: 50px;
+  width: 100px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  font-size: 1.1rem;
+}
+
+  .manageButtons button:hover {
+    background-color: var(--color-three); /* Gold */
+  }
+
+.preferenceButtons button {
+  background-color: var(--color-four);
+  color: var(--color-one);
+  border: none;
+  font-size: 1.1rem;
+  height: 50px;
+  width: 100px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  font-size: 1.1rem;
+}
+
+  .preferenceButtons button:hover {
+    background-color: var(--color-three); /* Gold */
+  }

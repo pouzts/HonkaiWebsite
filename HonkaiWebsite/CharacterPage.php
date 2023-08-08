@@ -8,9 +8,7 @@ $json = GetJsonFromDB($myDbConn);
         
     ?>
 </table>
-<div id="chara-data">
-
-</div>
+<div id="chara-data"></div>
 
 <?php
 include_once "Footer.php"

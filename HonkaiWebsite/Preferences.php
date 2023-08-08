@@ -5,13 +5,11 @@ include_once "MyHeader.php";
 // $_COOKIE["MyStyle"] or such
 
 ?>
-<center>
-    <select name="cars" id="cars">
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="mercedes">Mercedes</option>
-      <option value="audi">Audi</option>
-    </select>
+<center class="preferenceButtons">
+    <button>Preference 1</button>
+    <button>Preference 2</button>
+    <button>Preference 3</button>
+    <button>Preference 4</button>
 </center>
 
 <?php
