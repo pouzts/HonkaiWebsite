@@ -28,8 +28,7 @@ function PageDisplay($PageData) {
         $row = mysqli_fetch_array($PageData);
 
         echo ' &nbsp; &nbsp; <h2> ' . $row['Header1'] .  ' </h2> <br />';
-        echo ' &nbsp; &nbsp; <p> ' . $row['Text1'] .  '</p> <br />';
-
+        echo $row['Text1'] . "<br/> <br/>";
     } // End if
     else {
         echo "No Page data to display <br />";
