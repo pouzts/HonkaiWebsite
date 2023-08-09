@@ -86,11 +86,11 @@ mysqli_free_result($recordset);
 // Add a Admin link if. . . 
 // $_SESSION["isAdmin"] = 1; // Cheat - Do not do this in your code. 
 if ($_SESSION["isAdmin"] == 1) {
-    echo '  &nbsp; &nbsp;<a href="ManagePages.php">Manage Pages</a>';
+    //echo '  &nbsp; &nbsp;<a href="ManagePages.php">Manage Pages</a>';
+    echo '  &nbsp; &nbsp;<a href="ManageCharacterPage.php">Manage Characters</a>';
 }
 else {
     echo '  &nbsp; &nbsp;<a href="Login.php">Login</a>';
-    echo '  &nbsp; &nbsp;<a href="ManageCharacterPage.php">Manage Characters</a>';
 }
 
 

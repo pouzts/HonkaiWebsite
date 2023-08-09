@@ -2,7 +2,7 @@
 
 // Create constants
 DEFINE ('DB_USER', 'root');
-DEFINE ('DB_PSWD', 'Nu200342070'); //Change to your password
+DEFINE ('DB_PSWD', 'Password'); //Change to your password
 DEFINE ('DB_SERVER', 'localhost');
 DEFINE ('DB_NAME', 'mytestdb');
 
