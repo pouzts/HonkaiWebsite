@@ -2,7 +2,7 @@
 
 // Create constants
 DEFINE ('DB_USER', 'root');
-DEFINE ('DB_PSWD', 'Nu200342070'); //Change to your password
+DEFINE ('DB_PSWD', 'talos4'); //Change to your password
 DEFINE ('DB_SERVER', 'localhost');
 DEFINE ('DB_NAME', 'mytestdb');
 
@@ -77,7 +77,8 @@ function GetJsonFromDB($dbConn)
     $query = "SELECT JSON_OBJECT(
         'jId', chara.Id,
         'jName', chara.Name,
-        'jRarity', chara.Element,
+        'jRarity', chara.Rarity,
+        'jElement', chara.Element,
         'jPath', chara.Path,
         'jAffiliation', chara.Affiliation,
         ) AS Json1 FROM mycharacters chara;";
