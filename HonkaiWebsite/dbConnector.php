@@ -81,7 +81,7 @@ function GetJsonFromDB($dbConn)
         'jElement', chara.Element,
         'jPath', chara.Path,
         'jAffiliation', chara.Affiliation
-        ) AS Json1 FROM mycharacters chara;";
+        ) AS Json1 FROM mycharacters chara WHERE isActive = 1;";
 
     return @mysqli_query($dbConn, $query);
 }
