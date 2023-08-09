@@ -30,16 +30,10 @@ $MyHeader = "My Header";
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta content="text/html; charset=ISO-8859-1"  http-equiv="content-type">
   <title><?php echo $myTitle ?></title>
-
-    <!--
-        <script src="/Scripts/jquery-ui-1.11.1.Redmond/jquery.js"></script>
-        <script src="/Scripts/jquery-ui-1.11.1.Redmond/jquery-ui.js"></script>
-        <link href="/Scripts/jquery-ui-1.11.1.Redmond/jquery-ui.css" rel="stylesheet" />
-        -->
+  <script src="/Scripts/query.js"></script>
     <?php
     // Set style page
     switch ($myStyle) {
