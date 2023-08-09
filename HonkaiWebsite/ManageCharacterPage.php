@@ -2,6 +2,7 @@
 include_once "MyHeader.php";
 ?>
 
+<div class="manageCharacters">
 Input Character ID to change: &nbsp;
 <input type="number" id="charID" value="" placeholder="" title="theInput" />
 Character's Name : &nbsp;
@@ -14,10 +15,14 @@ Character's Path : &nbsp;
 <input type="text" id="charPath" value="" placeholder="The Path" />
 Character's Affiliation : &nbsp;
 <input type="text" id="charAffiliation" value="" placeholder="Honkai" />
+</div>
 
+<center class="manageButtons">
 <button name="addButton" onclick="onAddButtonClick()">Add New</button>
 <button name="editButton" onclick="onEditButtonClick()">Edit</button>
 <button name="removeButton" onclick="onRemoveButtonClick()">Remove</button>
+</center>
+
 <p id="jsonData"></p>
 
 <script>

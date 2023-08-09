@@ -1,5 +1,5 @@
 <?php
-// include_once "dbConnector.php";
+ include_once "dbConnector.php";
 ?>
 
 <?php
@@ -11,12 +11,12 @@ function MenuDisplay($dataset) {
     if ($dataset){
         // per.Fname, per.Lname, cel.Cell_Id, cel.CellNumber
         while($row = mysqli_fetch_array($dataset)){
-            echo ' &nbsp; &nbsp; <a href="Index.php?PageId=' . $row['id'] .  '" >' . $row['Title'] . '</a>';
+            echo ' &nbsp; &nbsp; <a class="menuItems" href="Index.php?PageId=' . $row['id'] .  '" >' . $row['Title'] . '</a>';
         }
     } // End if
     else {
         echo "No menu items<br />";
-        echo mysqli_error($myDbConn);
+        //echo mysqli_error($myDbConn);
     }
 
 }
@@ -27,8 +27,9 @@ function PageDisplay($PageData) {
         // per.Fname, per.Lname, cel.Cell_Id, cel.CellNumber
         $row = mysqli_fetch_array($PageData);
 
-        echo ' &nbsp; &nbsp; <h2> ' . $row['Header1'] .  ' </h2> <br />';
-        echo $row['Text1'] . "<br/> <br/>";
+        echo ' &nbsp; &nbsp; <h2 class="pageTitle"> ' . $row['Header1'] .  ' </h2> <br />';
+        echo ' &nbsp; &nbsp; <p class="pageContent">' . $row['Text1'] .  '</p> <br />';
+
     } // End if
     else {
         echo "No Page data to display <br />";

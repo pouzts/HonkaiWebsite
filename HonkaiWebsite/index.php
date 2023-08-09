@@ -19,22 +19,26 @@ $PageData = PageContentGet($myDbConn, $PageId);
 // Display page data
 PageDisplay($PageData);
 mysqli_free_result($PageData);
+?>
 
+<div class="navBar">
+<?php
 // Display sub page links
 
 $SubPages = MyPagesGet($myDbConn, $PageId); 
 if (($PageId != "0") && ($SubPages) && ($SubPages->num_rows > 0)) {
-    echo "Sub page links: ";
+    //echo "Sub page links: ";
     // Display the main menu
     MenuDisplay($SubPages);
     mysqli_free_result($SubPages);
 }
 else
 {
-    echo "<br /> Welcome. . . Click a menu link";
+    //echo "<br /> Welcome. . . Click a menu link";
 }
 
 ?>
+</div>
 
 <?php
 // Always close db connection

@@ -5,8 +5,12 @@ include_once "MyHeader.php";
 // $_COOKIE["MyStyle"] or such
 
 ?>
-
-Add code (form) to change style preferences. 
+<center class="preferenceButtons">
+    <button>Preference 1</button>
+    <button>Preference 2</button>
+    <button>Preference 3</button>
+    <button>Preference 4</button>
+</center>
 
 <?php
 include_once "MyHeader.php";

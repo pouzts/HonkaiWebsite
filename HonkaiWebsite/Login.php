@@ -30,6 +30,7 @@ if (isset($_POST['login'])) {
 
 //$dbConn->close();
 ?>
+<center class="loginPage">
 <form method="post" action="" name="signin-form">
     <div class="form-element">
         <label>Username</label>
@@ -39,9 +40,10 @@ if (isset($_POST['login'])) {
         <label>Password</label>
         <input type="password" name="password" required />
     </div>
-    <button type="submit" name="login" value="login">Log In</button>
+    <button class="loginButton" type="submit" name="login" value="login">Log In</button>
     <?php if (isset($error_message)) { echo "<p>$error_message</p>"; } ?>
 </form>
+</center>
 
 
 <?php
