@@ -6,10 +6,12 @@ include_once "MyHeader.php";
 
 ?>
 <center class="preferenceButtons">
-    <button>Preference 1</button>
-    <button>Preference 2</button>
-    <button>Preference 3</button>
-    <button>Preference 4</button>
+    <form method="post">
+    <button type="submit" name="preferencesSet" value="1">Preference 1</button>
+    <button type="submit" name="preferencesSet" value="2">Preference 2</button>
+    <button type="submit" name="preferencesSet" value="3">Preference 3</button>
+    <button type="submit" name="preferencesSet" value="4">Preference 4</button>
+    </form>            
 </center>
 
 <?php

@@ -6,7 +6,7 @@ include_once "Helper.php";
 
 ?>
 
-<?php 
+<?php
 
 $myStyle = "1";
 
@@ -14,18 +14,20 @@ $myStyle = "1";
 if (isset($_SESSION["isAdmin"]) == false) {
     $_SESSION["isAdmin"] = 0; // Set default
 }
+//set style
+if (isset($_POST['preferencesSet'])) {
+    $myStyle = $_POST['preferencesSet'];
+}
 // Check for style setting
 if (isset($_COOKIE["MyStyle"]) == true) {
     $myStyle = $_COOKIE["MyStyle"];
-}
-else
-{
+} else {
     // Set default style
     $_COOKIE["MyStyle"] = $myStyle;
 }
 
-$myTitle = "my title";
-$MyHeader = "My Header";
+$myTitle = "HSR Team Builder";
+$MyHeader = "HSR Team Builder";
 
 ?>
 <!DOCTYPE html>
@@ -34,20 +36,21 @@ $MyHeader = "My Header";
   <meta content="text/html; charset=ISO-8859-1"  http-equiv="content-type">
   <title><?php echo $myTitle ?></title>
   <script src="Scripts/jquery.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400;500;600;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <?php
     // Set style page
     switch ($myStyle) {
         case "1":
-            echo '<link rel="stylesheet" type="text/css"  href="/css/myStyle1.css">';
+            echo '<link rel="stylesheet" type="text/css"  href="/styles/myStyle1.css">';
             break;
         case "2":
-            echo '<link rel="stylesheet" type="text/css"  href="/css/myStyle2.css">';
+            echo '<link rel="stylesheet" type="text/css"  href="/styles/myStyle2.css">';
             break;
         case "3":
-            echo '<link rel="stylesheet" type="text/css"  href="/css/myStyle3.css">';
+            echo '<link rel="stylesheet" type="text/css"  href="/styles/myStyle3.css">';
             break;
         default:
-            echo '<link rel="stylesheet" type="text/css"  href="/css/myStyle1.css">';
+            echo '<link rel="stylesheet" type="text/css"  href="/styles/myStyle1.css">';
             break;
     }
     ?>
@@ -57,39 +60,39 @@ $MyHeader = "My Header";
     -->
 </head>
 <body>
-
-<h1><?php echo $MyHeader ?></h1>
+    <center>
+<h1 class="pageHeader"><?php echo $MyHeader ?></h1>
+    </center>
 
 <br />
+    <div class="navBar">
     <!-- Get the menu items -->
 <?php
 $myDbConn = ConnGet();
 
 // $recordset = MyPagesAllGet($myDbConn); 
-$recordset = MyPagesGet($myDbConn, 0); 
+$recordset = MyPagesGet($myDbConn, 0);
 // Display the main menu
 MenuDisplay($recordset);
 mysqli_free_result($recordset);
 
 ?>
     <!-- Add a link for the custom settings -->
-    &nbsp; &nbsp;<a href="Preferences.php">My Preferences </a>
+    &nbsp; &nbsp;<a class="menuItems" href="Preferences.php">My Preferences </a>
 
 <?php
 
 // Add a Admin link if. . . 
 // $_SESSION["isAdmin"] = 1; // Cheat - Do not do this in your code. 
 if ($_SESSION["isAdmin"] == 1) {
-    echo '  &nbsp; &nbsp;<a href="ManagePages.php">Manage Pages</a>';
+    echo '  &nbsp; &nbsp;<a class="menuItems" href="ManagePages.php">Manage Pages</a>';
+} else {
+    echo '  &nbsp; &nbsp;<a class="menuItems" href="ManageCharacterPage.php">Manage Characters</a>';
+    echo '  &nbsp; &nbsp;<a class="menuItems" href="CharactersPage.php">View Characters</a>';
+    echo '  &nbsp; &nbsp;<a class="menuItems" href="Login.php">Login</a>';
 }
-else {
-    echo '  &nbsp; &nbsp;<a href="Login.php">Login</a>';
-    echo '  &nbsp; &nbsp;<a href="ManageCharacterPage.php">Manage Characters</a>';
-    echo '  &nbsp; &nbsp;<a href="CharactersPage.php">View Characters</a>';
-}
-
-
 ?>
+    </div>
 <br />
 <br />
 

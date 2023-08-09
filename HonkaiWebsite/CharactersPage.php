@@ -1,18 +1,18 @@
 <?php
 include_once "MyHeader.php";
 ?>
-<div id="chara-data">
-    <h3 id="chara-name"></h3>
-    <h3 id="chara-rarity"></h3>
-    <h3 id="chara-element"></h3>
-    <h3 id="chara-path"></h3>
-    <h3 id="chara-affiliation"></h3>
+<div class="charThings">
+    <div class="charData" id="chara-data">
+        <h3 id="chara-name"></h3>
+        <h3 id="chara-rarity"></h3>
+        <h3 id="chara-element"></h3>
+        <h3 id="chara-path"></h3>
+        <h3 id="chara-affiliation"></h3>
+    </div>
+    <li class="charaList" id="chara-list"></li>
 </div>
-<li id="chara-list">
-    
-</li>
 
-<script>
+    <script>
     var request = new XMLHttpRequest();
 
     $(document).ready(function() {
@@ -39,14 +39,14 @@ include_once "MyHeader.php";
     }
 
     function onCharacterClick(name, rarity, element, path, affiliation) {
-        alert("On Character Click");
+        //alert("On Character Click");
         document.getElementById("chara-name").innerHTML = "Character: " + name;
         document.getElementById("chara-rarity").innerHTML = "Rarity: " + rarity;
         document.getElementById("chara-element").innerHTML = "Element: " + element;
         document.getElementById("chara-path").innerHTML = "Path: " + path;
         document.getElementById("chara-affiliation").innerHTML = "Affiliation: " + affiliation;
     }
-</script>
+    </script>
 <?php
 include_once "MyFooter.php"
 ?>
