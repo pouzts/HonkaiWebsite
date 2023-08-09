@@ -1,7 +1,7 @@
 <?php
 session_start(); // Must be first, prior to any HTML. Session will expire
 
-include_once "dbConnector.php";
+include_once "DbConnector.php";
 include_once "Helper.php";
 
 ?>
@@ -90,6 +90,7 @@ if ($_SESSION["isAdmin"] == 1) {
 }
 else {
     echo '  &nbsp; &nbsp;<a href="Login.php">Login</a>';
+    echo '  &nbsp; &nbsp;<a href="ManageCharacterPage.php">Manage Characters</a>';
 }
 
 
