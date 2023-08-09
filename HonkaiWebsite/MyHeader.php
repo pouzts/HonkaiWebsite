@@ -24,8 +24,8 @@ else
     $_COOKIE["MyStyle"] = $myStyle;
 }
 
-$myTitle = "my title";
-$MyHeader = "My Header";
+$myTitle = "HSR Team Builder";
+$MyHeader = "HSR Team Builder";
 
 ?>
 <!DOCTYPE html>
@@ -40,6 +40,7 @@ $MyHeader = "My Header";
         <script src="/Scripts/jquery-ui-1.11.1.Redmond/jquery-ui.js"></script>
         <link href="/Scripts/jquery-ui-1.11.1.Redmond/jquery-ui.css" rel="stylesheet" />
         -->
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400;500;600;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <?php
     // Set style page
     switch ($myStyle) {
@@ -64,7 +65,9 @@ $MyHeader = "My Header";
 </head>
 <body>
 
+    <center>
 <h1 class="pageHeader"><?php echo $MyHeader ?></h1>
+    </center>
 
 <br />
     <!-- Get the menu items -->
@@ -80,7 +83,7 @@ mysqli_free_result($recordset);
 
 ?>
     <!-- Add a link for the custom settings -->
-    &nbsp; &nbsp;<a href="Preferences.php">My Preferences </a>
+    &nbsp; &nbsp;<a class="menuItems" href="Preferences.php">My Preferences </a>
 
 <?php
 
