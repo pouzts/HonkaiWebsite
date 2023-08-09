@@ -64,10 +64,11 @@ $MyHeader = "My Header";
 </head>
 <body>
 
-<h1><?php echo $MyHeader ?></h1>
+<h1 class="pageHeader"><?php echo $MyHeader ?></h1>
 
 <br />
     <!-- Get the menu items -->
+    <div class="navBar">
 <?php
 $myDbConn = ConnGet();
 
@@ -87,14 +88,15 @@ mysqli_free_result($recordset);
 // $_SESSION["isAdmin"] = 1; // Cheat - Do not do this in your code. 
 if ($_SESSION["isAdmin"] == 1) {
     //echo '  &nbsp; &nbsp;<a href="ManagePages.php">Manage Pages</a>';
-    echo '  &nbsp; &nbsp;<a href="ManageCharacterPage.php">Manage Characters</a>';
+    echo '  &nbsp; &nbsp;<a class="menuItems" href="ManageCharacterPage.php">Manage Characters</a>';
 }
 else {
-    echo '  &nbsp; &nbsp;<a href="Login.php">Login</a>';
+    echo '  &nbsp; &nbsp;<a class="menuItems" href="Login.php">Login</a>';
 }
 
 
 ?>
+        </div>
 <br />
 <br />
 
