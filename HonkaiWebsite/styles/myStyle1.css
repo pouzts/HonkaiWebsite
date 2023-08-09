@@ -59,7 +59,7 @@ body {
       background-color: var(--color-three); /* Gold */
     }
 
-.pageHeader{
+.pageHeader {
   padding-top: 15px;
 }
 
@@ -116,5 +116,32 @@ body {
 }
 
   .preferenceButtons button:hover {
+    background-color: var(--color-three); /* Gold */
+  }
+
+.form-element {
+  padding-bottom: 25px;
+}
+
+.loginPage input {
+  font-family: "M PLUS 1 Code", sans-serif;
+  font-size: 1.1rem;
+  height: 30px;
+  width: 250px;
+  border: none;
+}
+
+.loginButton {
+  background-color: var(--color-four);
+  color: var(--color-one);
+  border: none;
+  font-size: 1.1rem;
+  height: 50px;
+  width: 100px;
+  font-family: "M PLUS 1 Code", sans-serif;
+  font-size: 1.1rem;
+}
+
+  .loginButton:hover {
     background-color: var(--color-three); /* Gold */
   }
