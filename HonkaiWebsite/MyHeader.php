@@ -33,7 +33,7 @@ $MyHeader = "My Header";
 <head>
   <meta content="text/html; charset=ISO-8859-1"  http-equiv="content-type">
   <title><?php echo $myTitle ?></title>
-  <script src="/Scripts/query.js"></script>
+  <script src="Scripts/jquery.js"></script>
     <?php
     // Set style page
     switch ($myStyle) {
@@ -85,6 +85,7 @@ if ($_SESSION["isAdmin"] == 1) {
 else {
     echo '  &nbsp; &nbsp;<a href="Login.php">Login</a>';
     echo '  &nbsp; &nbsp;<a href="ManageCharacterPage.php">Manage Characters</a>';
+    echo '  &nbsp; &nbsp;<a href="CharactersPage.php">View Characters</a>';
 }
 
 

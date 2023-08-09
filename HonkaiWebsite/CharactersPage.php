@@ -1,11 +1,10 @@
 <?php
-include_once "Header.php";
+include_once "MyHeader.php";
 ?>
 <li id="chara-list">
     
 </li>
 <div id="chara-data">
-    
 </div>
 <script>
     var request = new XMLHttpRequest();
@@ -26,7 +25,7 @@ include_once "Header.php";
         let data = JSON.parse(response);
 
         for (index in data) {
-            ret += "<ul><span class='chara-link'>" + data.jName +
+            ret += "<ul><span class='chara-link'>" + data[index].jName +
                 ""+"</span></ul>";
         }
 
@@ -34,5 +33,5 @@ include_once "Header.php";
     }
 </script>
 <?php
-include_once "Footer.php"
+include_once "MyFooter.php"
 ?>
