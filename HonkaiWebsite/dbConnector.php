@@ -2,7 +2,7 @@
 
 // Create constants
 DEFINE ('DB_USER', 'root');
-DEFINE ('DB_PSWD', ''); //Change to your password
+DEFINE ('DB_PSWD', 'Nu200342070'); //Change to your password
 DEFINE ('DB_SERVER', 'localhost');
 DEFINE ('DB_NAME', 'mytestdb');
 
@@ -92,7 +92,7 @@ function AddCharacterToDatabase($dbConn, $charName, $charRarity, $charElement, $
 }
 
 function RemoveCharacterToDatabase($dbConn, $Id){
-    $query = "Update FROM mycharacters set isActive = 0 where id = " . $Id;
+    $query = "Update `mytestdb`.`mycharacters` set isActive = 0 where id = " . $Id;
 
     return @mysqli_query($dbConn, $query);
 }
