@@ -12,14 +12,17 @@ if (isset($_POST['login'])) {
     $dbConn = ConnGet(); // Get a database connection using the function from dbConnector.php
 
     // Perform SQL query to check user credentials
-    $query = "SELECT * FROM myusers WHERE First_Name = '$username' AND Pswd = '$password'";
+    $query = "SELECT isAdmin FROM myusers WHERE username = '$username' AND password= '$password' ";
     $result = mysqli_query($dbConn, $query); // Use the database connection for the query
 
     if ($result && mysqli_num_rows($result) == 1) {
         // Login successful
         session_start();
         $_SESSION['username'] = $username;
-        header("Location: index.php"); // Redirect to dashboard or home page
+        //if($result == 1) {
+        $_SESSION["isAdmin"] == 1;
+        //}
+        header("Location: index.php"); // Redirect to home page
         exit();
     } else {
         $error_message = "Invalid username or password";
