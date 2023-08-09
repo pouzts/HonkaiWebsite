@@ -24,37 +24,30 @@ else
     $_COOKIE["MyStyle"] = $myStyle;
 }
 
-$myTitle = "HSR Team Builder";
-$MyHeader = "HSR Team Builder";
+$myTitle = "my title";
+$MyHeader = "My Header";
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta content="text/html; charset=ISO-8859-1"  http-equiv="content-type">
   <title><?php echo $myTitle ?></title>
-
-    <!--
-        <script src="/Scripts/jquery-ui-1.11.1.Redmond/jquery.js"></script>
-        <script src="/Scripts/jquery-ui-1.11.1.Redmond/jquery-ui.js"></script>
-        <link href="/Scripts/jquery-ui-1.11.1.Redmond/jquery-ui.css" rel="stylesheet" />
-        -->
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400;500;600;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <script src="Scripts/jquery.js"></script>
     <?php
     // Set style page
     switch ($myStyle) {
         case "1":
-            echo '<link rel="stylesheet" type="text/css"  href="/styles/myStyle1.css">';
+            echo '<link rel="stylesheet" type="text/css"  href="/css/myStyle1.css">';
             break;
         case "2":
-            echo '<link rel="stylesheet" type="text/css"  href="/styles/myStyle2.css">';
+            echo '<link rel="stylesheet" type="text/css"  href="/css/myStyle2.css">';
             break;
         case "3":
-            echo '<link rel="stylesheet" type="text/css"  href="/styles/myStyle3.css">';
+            echo '<link rel="stylesheet" type="text/css"  href="/css/myStyle3.css">';
             break;
         default:
-            echo '<link rel="stylesheet" type="text/css"  href="/styles/myStyle1.css">';
+            echo '<link rel="stylesheet" type="text/css"  href="/css/myStyle1.css">';
             break;
     }
     ?>
@@ -65,13 +58,10 @@ $MyHeader = "HSR Team Builder";
 </head>
 <body>
 
-    <center>
-<h1 class="pageHeader"><?php echo $MyHeader ?></h1>
-    </center>
+<h1><?php echo $MyHeader ?></h1>
 
 <br />
     <!-- Get the menu items -->
-    <div class="navBar">
 <?php
 $myDbConn = ConnGet();
 
@@ -83,23 +73,23 @@ mysqli_free_result($recordset);
 
 ?>
     <!-- Add a link for the custom settings -->
-    &nbsp; &nbsp;<a class="menuItems" href="Preferences.php">My Preferences </a>
+    &nbsp; &nbsp;<a href="Preferences.php">My Preferences </a>
 
 <?php
 
 // Add a Admin link if. . . 
 // $_SESSION["isAdmin"] = 1; // Cheat - Do not do this in your code. 
 if ($_SESSION["isAdmin"] == 1) {
-    //echo '  &nbsp; &nbsp;<a href="ManagePages.php">Manage Pages</a>';
-    echo '  &nbsp; &nbsp;<a class="menuItems" href="ManageCharacterPage.php">Manage Characters</a>';
+    echo '  &nbsp; &nbsp;<a href="ManagePages.php">Manage Pages</a>';
 }
 else {
-    echo '  &nbsp; &nbsp;<a class="menuItems" href="Login.php">Login</a>';
+    echo '  &nbsp; &nbsp;<a href="Login.php">Login</a>';
+    echo '  &nbsp; &nbsp;<a href="ManageCharacterPage.php">Manage Characters</a>';
+    echo '  &nbsp; &nbsp;<a href="CharactersPage.php">View Characters</a>';
 }
 
 
 ?>
-        </div>
 <br />
 <br />
 
