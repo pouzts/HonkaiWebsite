@@ -2,7 +2,6 @@
 include_once "MyHeader.php";
 ?>
 <div id="chara-data">
-    <button onclick="onCharacterClick('testingMan', 3, 'testing', 'thisIsTest', 'IHasTest')">Testing Button</button>
     <h3 id="chara-name"></h3>
     <h3 id="chara-rarity"></h3>
     <h3 id="chara-element"></h3>
