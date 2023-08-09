@@ -3,7 +3,32 @@ include_once "MyHeader.php";
 
 // Use this page to change the value of
 // $_SESSION["isAdmin"] or such
+//$dbConn = new mysqli($host, $username, $password, $database);
 
+if (isset($_POST['login'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $dbConn = ConnGet(); // Get a database connection using the function from dbConnector.php
+
+    // Perform SQL query to check user credentials
+    $query = "SELECT * FROM myusers WHERE First_Name = '$username' AND Pswd = '$password'";
+    $result = mysqli_query($dbConn, $query); // Use the database connection for the query
+
+    if ($result && mysqli_num_rows($result) == 1) {
+        // Login successful
+        session_start();
+        $_SESSION['username'] = $username;
+        header("Location: index.php"); // Redirect to dashboard or home page
+        exit();
+    } else {
+        $error_message = "Invalid username or password";
+    }
+
+    mysqli_close($dbConn); // Close the database connection
+}
+
+//$dbConn->close();
 ?>
 <form method="post" action="" name="signin-form">
     <div class="form-element">
