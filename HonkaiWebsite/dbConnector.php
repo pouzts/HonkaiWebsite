@@ -2,7 +2,7 @@
 
 // Create constants
 DEFINE ('DB_USER', 'root');
-DEFINE ('DB_PSWD', 'password');
+DEFINE ('DB_PSWD', 'Password'); //Change to your password
 DEFINE ('DB_SERVER', 'localhost');
 DEFINE ('DB_NAME', 'mytestdb');
 
@@ -59,6 +59,29 @@ function MyPageremove($dbConn, $Id) {
     return @mysqli_query($dbConn, $query);
 }
 
+function GetCharacterDataByID($dbConn, $Id){
+    $query = "select * from mycharacters where id = " . $Id . ";";
+
+    return @mysqli_query($dbConn, $query);
+}
+
+function AddCharacterToDatabase($dbConn, $charName, $charRarity, $charElement, $charPath, $charAffiliation){
+    $query = "INSERT INTO `mytestdb`.`mycharacters` (`name`, `rarity`, `element`, `path`, `affiliation`) VALUES ('" . $charName . "', '" . $charRarity . "', '" . $charElement . "', '" . $charPath . "', '" . $charAffiliation . "');";
+
+    return @mysqli_query($dbConn, $query);
+}
+
+function RemoveCharacterToDatabase($dbConn, $Id){
+    $query = "Update `mytestdb`.`mycharacters` set isActive = 0 where id = " . $Id;
+
+    return @mysqli_query($dbConn, $query);
+}
+
+function EditDataForCharacter($dbConn, $Id, $charName, $charRarity, $charElement, $charPath, $charAffiliation){
+    $query = "UPDATE `mytestdb`.`mycharacters` SET `name` = '" . $charName . "', `rarity` = '" . $charRarity . "', `element` = '" . $charElement . "', `path` = '" . $charPath . "', `affiliation` = '" . $charAffiliation . "' WHERE (`id` = '" . $Id . "');";
+
+    return @mysqli_query($dbConn, $query);
+}
 
 ?>
 
