@@ -6,20 +6,24 @@ include_once "Helper.php";
 
 ?>
 
-<?php 
+<?php
 
 $myStyle = "1";
 
 // Check for Priv setting
 if (isset($_SESSION["isAdmin"]) == false) {
-    $_SESSION["isAdmin"] = 0; // Set default
+    $_SESSION["isAAdmin"] = 0; // Set default
+} else{
+    $_SESSION["isAAdmin"] = 1;
+}
+//set style
+if (isset($_POST['preferencesSet'])) {
+    $myStyle = $_POST['preferencesSet'];
 }
 // Check for style setting
 if (isset($_COOKIE["MyStyle"]) == true) {
     $myStyle = $_COOKIE["MyStyle"];
-}
-else
-{
+} else {
     // Set default style
     $_COOKIE["MyStyle"] = $myStyle;
 }
@@ -30,16 +34,10 @@ $MyHeader = "HSR Team Builder";
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta content="text/html; charset=ISO-8859-1"  http-equiv="content-type">
   <title><?php echo $myTitle ?></title>
-
-    <!--
-        <script src="/Scripts/jquery-ui-1.11.1.Redmond/jquery.js"></script>
-        <script src="/Scripts/jquery-ui-1.11.1.Redmond/jquery-ui.js"></script>
-        <link href="/Scripts/jquery-ui-1.11.1.Redmond/jquery-ui.css" rel="stylesheet" />
-        -->
+  <script src="Scripts/jquery.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400;500;600;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <?php
     // Set style page
@@ -64,19 +62,18 @@ $MyHeader = "HSR Team Builder";
     -->
 </head>
 <body>
-
     <center>
 <h1 class="pageHeader"><?php echo $MyHeader ?></h1>
     </center>
 
 <br />
-    <!-- Get the menu items -->
     <div class="navBar">
+    <!-- Get the menu items -->
 <?php
 $myDbConn = ConnGet();
 
 // $recordset = MyPagesAllGet($myDbConn); 
-$recordset = MyPagesGet($myDbConn, 0); 
+$recordset = MyPagesGet($myDbConn, 0);
 // Display the main menu
 MenuDisplay($recordset);
 mysqli_free_result($recordset);
@@ -89,17 +86,16 @@ mysqli_free_result($recordset);
 
 // Add a Admin link if. . . 
 // $_SESSION["isAdmin"] = 1; // Cheat - Do not do this in your code. 
-if ($_SESSION["isAdmin"] == 1) {
-    //echo '  &nbsp; &nbsp;<a href="ManagePages.php">Manage Pages</a>';
+if ($_SESSION["isAAdmin"] == 1) {
+    echo '  &nbsp; &nbsp;<a class="menuItems" href="CharactersPage.php">View Characters</a>';
     echo '  &nbsp; &nbsp;<a class="menuItems" href="ManageCharacterPage.php">Manage Characters</a>';
-}
-else {
+    echo '  &nbsp; &nbsp;<a class="menuItems" href="Login.php">Login</a>';
+} else {
+    echo '  &nbsp; &nbsp;<a class="menuItems" href="CharactersPage.php">View Characters</a>';
     echo '  &nbsp; &nbsp;<a class="menuItems" href="Login.php">Login</a>';
 }
-
-
 ?>
-        </div>
+    </div>
 <br />
 <br />
 

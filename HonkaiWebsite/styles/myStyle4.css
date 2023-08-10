@@ -145,3 +145,37 @@ body {
   .loginButton:hover {
     background-color: var(--color-three); /* Gold */
   }
+
+.charData {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.charThings {
+  padding-left: 550px;
+  padding-bottom: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-auto-rows: 25px;
+  row-gap: 15px;
+}
+
+  .charThings button {
+    background-color: var(--color-four);
+    color: var(--color-one);
+    border: none;
+    font-size: 1.1rem;
+    height: 50px;
+    width: 100px;
+    font-family: "M PLUS 1 Code", sans-serif;
+    font-size: 1.1rem;
+  }
+
+    .charThings button:hover {
+      background-color: var(--color-three); /* Gold */
+    }
+
+.charaList {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: auto auto auto;
