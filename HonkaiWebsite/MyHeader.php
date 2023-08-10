@@ -12,7 +12,9 @@ $myStyle = "1";
 
 // Check for Priv setting
 if (isset($_SESSION["isAdmin"]) == false) {
-    $_SESSION["isAdmin"] = 0; // Set default
+    $_SESSION["isAAdmin"] = 0; // Set default
+} else{
+    $_SESSION["isAAdmin"] = 1;
 }
 //set style
 if (isset($_POST['preferencesSet'])) {
@@ -84,10 +86,11 @@ mysqli_free_result($recordset);
 
 // Add a Admin link if. . . 
 // $_SESSION["isAdmin"] = 1; // Cheat - Do not do this in your code. 
-if ($_SESSION["isAdmin"] == 1) {
-    echo '  &nbsp; &nbsp;<a class="menuItems" href="ManagePages.php">Manage Pages</a>';
-} else {
+if ($_SESSION["isAAdmin"] == 1) {
+    echo '  &nbsp; &nbsp;<a class="menuItems" href="CharactersPage.php">View Characters</a>';
     echo '  &nbsp; &nbsp;<a class="menuItems" href="ManageCharacterPage.php">Manage Characters</a>';
+    echo '  &nbsp; &nbsp;<a class="menuItems" href="Login.php">Login</a>';
+} else {
     echo '  &nbsp; &nbsp;<a class="menuItems" href="CharactersPage.php">View Characters</a>';
     echo '  &nbsp; &nbsp;<a class="menuItems" href="Login.php">Login</a>';
 }
