@@ -52,7 +52,7 @@ $MyHeader = "HSR Team Builder";
             echo '<link rel="stylesheet" type="text/css"  href="/styles/myStyle3.css">';
             break;
         default:
-            echo '<link rel="stylesheet" type="text/css"  href="/styles/myStyle1.css">';
+            echo '<link rel="stylesheet" type="text/css"  href="/styles/myStyle4.css">';
             break;
     }
     ?>
