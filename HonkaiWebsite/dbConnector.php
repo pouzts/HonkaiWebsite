@@ -2,7 +2,7 @@
 
 // Create constants
 DEFINE ('DB_USER', 'root');
-DEFINE ('DB_PSWD', 'Pass'); //Change to your password
+DEFINE ('DB_PSWD', 'Nu200342070'); //Change to your password
 DEFINE ('DB_SERVER', 'localhost');
 DEFINE ('DB_NAME', 'mytestdb');
 
@@ -68,6 +68,20 @@ function GetCharacterDataByID($dbConn, $Id){
 
 function GetAllCharacterData($dbConn) {
     $query = "select * from mycharacters;";
+
+    return @mysqli_query($dbConn, $query);
+}
+
+function GetAllCharacterDataJson($dbConn){
+    $query = "SELECT JSON_OBJECT(
+        'jId', chara.Id,
+        'jName', chara.Name,
+        'jRarity', chara.Rarity,
+        'jElement', chara.Element,
+        'jPath', chara.Path,
+        'jAffiliation', chara.Affiliation,
+        'jIsActive', chara.IsActive)
+        AS Json1 FROM mycharacters chara;";
 
     return @mysqli_query($dbConn, $query);
 }
