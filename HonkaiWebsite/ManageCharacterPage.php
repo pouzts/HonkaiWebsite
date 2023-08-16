@@ -41,14 +41,17 @@ Character's Affiliation : &nbsp;
 
     function onAddButtonClick() {
         addCharacter(document.getElementById("charName").value, document.getElementById("charRarity").value, document.getElementById("charElement").value, document.getElementById("charPath").value, document.getElementById("charAffiliation").value);
+        loadData();
     }
 
     function onEditButtonClick() {
         editCharacter(document.getElementById("charID").value, document.getElementById("charName").value, document.getElementById("charRarity").value, document.getElementById("charElement").value, document.getElementById("charPath").value, document.getElementById("charAffiliation").value);
+        loadData();
     }
 
     function onRemoveButtonClick() {
         removeCharacter(document.getElementById("charID").value);
+        loadData();
     }
 
     function addCharacter(charName, charRarity, charElement, charPath, charAffiliation) {
