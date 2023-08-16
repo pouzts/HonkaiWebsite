@@ -72,6 +72,20 @@ function GetAllCharacterData($dbConn) {
     return @mysqli_query($dbConn, $query);
 }
 
+function GetAllCharacterDataJson($dbConn){
+    $query = "SELECT JSON_OBJECT(
+        'jId', chara.Id,
+        'jName', chara.Name,
+        'jRarity', chara.Rarity,
+        'jElement', chara.Element,
+        'jPath', chara.Path,
+        'jAffiliation', chara.Affiliation,
+        'jIsActive', chara.IsActive)
+        AS Json1 FROM mycharacters chara;";
+
+    return @mysqli_query($dbConn, $query);
+}
+
 function GetJsonFromDB($dbConn)
 {
     $query = "SELECT JSON_OBJECT(
