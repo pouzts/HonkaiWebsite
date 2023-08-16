@@ -146,12 +146,12 @@ body {
     background-color: var(--color-three); /* Gold */
   }
 
-.charData {
+.charaData {
   padding-left: 25px;
   padding-right: 25px;
 }
 
-.charThings {
+.charaThings {
   padding-left: 550px;
   padding-bottom: 50px;
   display: grid;
@@ -160,7 +160,7 @@ body {
   row-gap: 15px;
 }
 
-  .charThings button {
+  .charaThings button {
     background-color: var(--color-four);
     color: var(--color-one);
     border: none;
@@ -171,12 +171,48 @@ body {
     font-size: 1.1rem;
   }
 
-    .charThings button:hover {
-      background-color: var(--color-three); /* Gold */
-    }
+  .charaThings button:hover {
+    background-color: var(--color-three);
+  } 
 
-.charaList {
+.charaList{
   display: grid;
   gap: 25px;
   grid-template-columns: auto auto auto;
+
+  height: 600px;
+  width: 620px;
+
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-one);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-four);
+}
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-three);
+  }
+
+  .filler{
+    padding-top: 25px;
+  }
+
+.database {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: auto auto auto;
+
+  height: 400px;
+  width: 850px;
+
+  overflow: auto;
 }

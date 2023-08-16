@@ -1,18 +1,18 @@
 <?php
 include_once "MyHeader.php";
 ?>
-<div class="charThings">
-    <div class="charData" id="chara-data">
+<div class="charaThings">
+    <div class="charaData" id="chara-data">
         <h3 id="chara-name"></h3>
         <h3 id="chara-rarity"></h3>
         <h3 id="chara-element"></h3>
         <h3 id="chara-path"></h3>
         <h3 id="chara-affiliation"></h3>
     </div>
-    <li class="charaList" id="chara-list"></li>
+<li class="charaList" id="chara-list"></li>
 </div>
 
-    <script>
+<script>
     var request = new XMLHttpRequest();
 
     $(document).ready(function() {
@@ -46,7 +46,7 @@ include_once "MyHeader.php";
         document.getElementById("chara-path").innerHTML = "Path: " + path;
         document.getElementById("chara-affiliation").innerHTML = "Affiliation: " + affiliation;
     }
-    </script>
+</script>
 <?php
 include_once "MyFooter.php"
-?>
+    ?>
