@@ -24,7 +24,10 @@ Character's Affiliation : &nbsp;
 </center>
 
 <p id="jsonData"></p>
-<p id="tableData"></p>
+<div class="filler"></div>
+<center>
+    <p class="database" id="tableData"></p>
+</center>
 
 <script>
     var request = new XMLHttpRequest();
