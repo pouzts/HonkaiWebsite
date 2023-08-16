@@ -171,18 +171,16 @@ body {
     font-size: 1.1rem;
   }
 
-  .charaThings button:hover {
-    background-color: var(--color-three);
-  } 
+    .charaThings button:hover {
+      background-color: var(--color-three);
+    }
 
-.charaList{
+.charaList {
   display: grid;
   gap: 25px;
   grid-template-columns: auto auto auto;
-
   height: 600px;
   width: 620px;
-
   overflow: auto;
 }
 
@@ -202,17 +200,15 @@ body {
     background: var(--color-three);
   }
 
-  .filler{
-    padding-top: 25px;
-  }
+.filler {
+  padding-top: 25px;
+}
 
 .database {
   display: grid;
   gap: 25px;
   grid-template-columns: auto auto auto;
-
   height: 400px;
   width: 850px;
-
   overflow: auto;
 }
