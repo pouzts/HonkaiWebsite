@@ -11,7 +11,7 @@ include_once "MyHeader.php";
     <button type="submit" name="preferencesSet" value="2">Preference 2</button>
     <button type="submit" name="preferencesSet" value="3">Preference 3</button>
     <button type="submit" name="preferencesSet" value="4">Preference 4</button>
-    </form>            
+    </form>         
 </center>
 
 <?php

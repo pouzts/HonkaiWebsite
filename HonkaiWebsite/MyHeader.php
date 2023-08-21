@@ -19,13 +19,16 @@ if (isset($_SESSION["isAdmin"]) == false) {
 //set style
 if (isset($_POST['preferencesSet'])) {
     $myStyle = $_POST['preferencesSet'];
+    setcookie("MyStyle", $_POST['preferencesSet']);
 }
 // Check for style setting
 if (isset($_COOKIE["MyStyle"]) == true) {
     $myStyle = $_COOKIE["MyStyle"];
+    echo "set here";
 } else {
     // Set default style
     $_COOKIE["MyStyle"] = $myStyle;
+    echo "set there";
 }
 
 $myTitle = "HSR Team Builder";
