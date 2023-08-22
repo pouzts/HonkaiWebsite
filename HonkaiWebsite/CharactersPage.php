@@ -2,6 +2,38 @@
 include_once "MyHeader.php";
 ?>
 <div class="charThings">
+    <div class="chara-search">
+        <form class="search-bar">
+            <label for="chara-name-search">Name</label>
+            <input type="text" name="chara-name-search" id="chara-name-search" value="" />
+            <label for="chara-rarity-five-star">5 Star</label>
+            <input type="radio" id="chara-rarity-five-star" name="chara-rarity-five-star" value="five_star"/>
+            <label for="chara-rarity-four-star">4 Star</label>
+            <input type="radio" id="chara-rarity-four-star" name="chara-rarity-four-star" value="four_star"/>
+            <label for="chara-element-search">Element</label>
+            <select name="chara-element-search" id="chara-element-search">
+                <option value="None">None</option>
+                <option value="Physical">Physical</option>
+                <option value="Fire">Fire</option>
+                <option value="Ice">Ice</option>
+                <option value="Lightning">Lightning</option>
+                <option value="Wind">Wind</option>
+                <option value="Quantium">Quantium</option>
+                <option value="Imaginary">Imaginary</option>
+            </select>
+            <label for="chara-path-search">Path</label>
+            <select name="chara-path-search" id="chara-path-search">
+                <option value="None">None</option>
+                <option value="Physical">Physical</option>
+                <option value="Fire">Fire</option>
+                <option value="Ice">Ice</option>
+                <option value="Lightning">Lightning</option>
+                <option value="Wind">Wind</option>
+                <option value="Quantium">Quantium</option>
+                <option value="Imaginary">Imaginary</option>
+            </select>
+        </form>
+    </div>
     <div class="charData" id="chara-data">
         <h3 id="chara-name"></h3>
         <h3 id="chara-rarity"></h3>
