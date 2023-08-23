@@ -86,6 +86,35 @@ function GetJsonFromDB($dbConn)
     return @mysqli_query($dbConn, $query);
 }
 
+function GetCharactersFromSearch($dbConn, $name, $rarity, $element, $path, $affiliation)
+{
+    $query = "SELECT * FROM mycharacters chara WHERE isActive = 1";
+
+    if ($name != "") {
+        $query .= "AND chara.Name = '" . $name . "' ";
+    }
+
+    if ($rarity != "") {
+        $query .= "AND chara.Rarity = '" . $rarity . "' ";
+    }
+
+    if ($element != "") {
+        $query .= "AND chara.Element = " . $element . "' ";
+    }
+
+    if ($path != "") {
+        $query .= "AND chara.Path = " . $path . "' ";
+    }
+
+    if ($rarity != "") {
+        $query .= "AND chara.Affiliation = " . $affiliation . "' ";
+    }
+
+    $query .= ";";
+
+    return @mysqli_query($dbConn, $query);
+}
+
 function AddCharacterToDatabase($dbConn, $charName, $charRarity, $charElement, $charPath, $charAffiliation){
     $query = "INSERT INTO `mytestdb`.`mycharacters` (`name`, `rarity`, `element`, `path`, `affiliation`) VALUES ('" . $charName . "', '" . $charRarity . "', '" . $charElement . "', '" . $charPath . "', '" . $charAffiliation . "');";
 

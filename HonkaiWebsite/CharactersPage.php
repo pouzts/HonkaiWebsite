@@ -6,10 +6,10 @@ include_once "MyHeader.php";
         <form class="search-bar">
             <label for="chara-name-search">Name</label>
             <input type="text" name="chara-name-search" id="chara-name-search" value="" />
-            <label for="chara-rarity-five-star">5 Star</label>
-            <input type="radio" id="chara-rarity-five-star" name="chara-rarity-five-star" value="five_star"/>
-            <label for="chara-rarity-four-star">4 Star</label>
-            <input type="radio" id="chara-rarity-four-star" name="chara-rarity-four-star" value="four_star"/>
+            <label for="chara-rarity">5 Star</label>
+            <input type="radio" id="chara-rarity-search" name="chara-rarity-search" value="five_star"/>
+            <label for="chara-rarity">4 Star</label>
+            <input type="radio" id="chara-rarity-search" name="chara-rarity-search" value="four_star"/>
             <label for="chara-element-search">Element</label>
             <select name="chara-element-search" id="chara-element-search">
                 <option value="None">None</option>
@@ -55,6 +55,10 @@ include_once "MyHeader.php";
         request.open("GET", "../getAllCharactersQuery.php");
         request.onload = loadCharacters;
         request.send();
+    }
+
+    function searchCharacters() {
+
     }
 
     function loadCharacters(evt) {
