@@ -19,16 +19,16 @@ if (isset($_SESSION["isAdmin"]) == false) {
 //set style
 if (isset($_POST['preferencesSet'])) {
     $myStyle = $_POST['preferencesSet'];
+
+    //You make me sad...
     setcookie("MyStyle", $_POST['preferencesSet']);
 }
-// Check for style setting
+ //Check for style setting
 if (isset($_COOKIE["MyStyle"]) == true) {
     $myStyle = $_COOKIE["MyStyle"];
-    echo "set here";
 } else {
     // Set default style
     $_COOKIE["MyStyle"] = $myStyle;
-    echo "set there";
 }
 
 $myTitle = "HSR Team Builder";
@@ -54,8 +54,11 @@ $MyHeader = "HSR Team Builder";
         case "3":
             echo '<link rel="stylesheet" type="text/css"  href="/styles/myStyle3.css">';
             break;
-        default:
+        case "4":
             echo '<link rel="stylesheet" type="text/css"  href="/styles/myStyle4.css">';
+            break;
+        default:
+            echo '<link rel="stylesheet" type="text/css"  href="/styles/myStyle1.css">';
             break;
     }
     ?>
