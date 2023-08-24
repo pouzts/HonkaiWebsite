@@ -10,19 +10,19 @@ if ($array_key_exists("charaName", $_GET)) {
     $charName = $_GET["charaName"];
 }
 
-if ($_GET["charaRarity"]) {
+if ($array_key_exists("charaName", $_GET)) {
     $charRarity = $_GET["charaRarity"];
 }
 
-if ($_GET["charaElement"]) {
+if ($array_key_exists("charaName", $_GET)) {
     $charRarity = $_GET["charaRarity"];
 }
 
-if ($_GET["charaPath"]) {
+if ($array_key_exists("charaName", $_GET)) {
     $charRarity = $_GET["charaRarity"];
 }
 
-if ($_GET["charaAffiliation"]) {
+if ($array_key_exists("charaName", $_GET)) {
     $charRarity = $_GET["charaRarity"];
 }
 
