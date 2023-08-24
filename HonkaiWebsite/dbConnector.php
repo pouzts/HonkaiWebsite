@@ -91,23 +91,23 @@ function GetCharactersFromSearch($dbConn, $name, $rarity, $element, $path, $affi
     $query = "SELECT * FROM mycharacters chara WHERE isActive = 1";
 
     if ($name != "") {
-        $query .= "AND chara.Name = '" . $name . "' ";
+        $query .= " AND CONTAINS(chara.Name, '" . $name . "')";
     }
 
     if ($rarity != "") {
-        $query .= "AND chara.Rarity = '" . $rarity . "' ";
+        $query .= " AND CONTAINS(chara.Rarity, '" . $rarity . "')";
     }
 
     if ($element != "") {
-        $query .= "AND chara.Element = " . $element . "' ";
+        $query .= " AND CONTAINS(chara.Element, '" . $element . "')";
     }
 
     if ($path != "") {
-        $query .= "AND chara.Path = " . $path . "' ";
+        $query .= " AND CONTAINS(chara.Path, '" . $path . "')";
     }
 
-    if ($rarity != "") {
-        $query .= "AND chara.Affiliation = " . $affiliation . "' ";
+    if ($affiliation != "") {
+        $query .= " AND CONTAINS(chara.affiliation, '" . $affiliation . "')";
     }
 
     $query .= ";";
@@ -132,8 +132,6 @@ function EditDataForCharacter($dbConn, $Id, $charName, $charRarity, $charElement
 
     return @mysqli_query($dbConn, $query);
 }
-
-
 ?>
 
 

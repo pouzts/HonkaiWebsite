@@ -58,7 +58,9 @@ include_once "MyHeader.php";
     }
 
     function searchCharacters() {
-
+        request.open("GET", "../getAllCharactersQuery.php");
+        //request.onload = loadCharacters;
+        request.send();
     }
 
     function loadCharacters(evt) {
