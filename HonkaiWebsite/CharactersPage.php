@@ -6,10 +6,10 @@ include_once "MyHeader.php";
         <form class="search-bar">
             <label for="chara-name-search">Name</label>
             <input type="text" name="chara-name-search" id="chara-name-search" value="" />
-            <label for="chara-rarity">5 Star</label>
-            <input type="radio" id="chara-rarity-search" name="chara-rarity-search" value="five_star"/>
-            <label for="chara-rarity">4 Star</label>
-            <input type="radio" id="chara-rarity-search" name="chara-rarity-search" value="four_star"/>
+            <label for="chara-rarity-search">5 Star</label>
+            <input type="radio" id="chara-rarity-search" name="chara-rarity-search" value="5"/>
+            <label for="chara-rarity-search">4 Star</label>
+            <input type="radio" id="chara-rarity-search" name="chara-rarity-search" value="4"/>
             <label for="chara-element-search">Element</label>
             <select name="chara-element-search" id="chara-element-search">
                 <option value="None">None</option>
@@ -32,6 +32,9 @@ include_once "MyHeader.php";
                 <option value="Quantium">Quantium</option>
                 <option value="Imaginary">Imaginary</option>
             </select>
+            <label for="chara-affiliation-search">Affiliation</label>
+            <input type="text" name="chara-affiliation-search" id="chara-affiliation-search" value=""/>
+            <button id="search-button" onclick="searchCharacters()">Search</button>
         </form>
     </div>
     <div class="charData" id="chara-data">
@@ -58,8 +61,22 @@ include_once "MyHeader.php";
     }
 
     function searchCharacters() {
-        request.open("GET", "../getAllCharactersQuery.php");
-        //request.onload = loadCharacters;
+        let name = document.getElementById("chara-name-search").value;
+        let element = document.getElementsByName("chara-element-search").value;
+        let rarity = "";
+        let path = document.getElementsByName("chara-path-search").value;
+        let affiliaton = document.getElementsByName("chara-affiliation-search").value;
+
+        // Go through the radio buttons.
+        let rarities = document.getElementsByName("chara-rarity-search");
+        for (let i = 0; i < rarities.length; i++) {
+            if (rarities[i].checked) {
+                rarity = rarities[i].value;
+            }
+        }
+        
+        request.open("GET", "../getAllCharactersQuery.php?charaName=" + name + "&charaRarity=" + rarity + "&charaElement=" + element
+            + "&charaPath=" + path + "&charaAffiliation=" + affiliaton);
         request.send();
     }
 

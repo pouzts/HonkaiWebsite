@@ -88,7 +88,14 @@ function GetJsonFromDB($dbConn)
 
 function GetCharactersFromSearch($dbConn, $name, $rarity, $element, $path, $affiliation)
 {
-    $query = "SELECT * FROM mycharacters chara WHERE isActive = 1";
+    $query = "SELECT JSON_OBJECT(
+        'jId', chara.Id,
+        'jName', chara.Name,
+        'jRarity', chara.Rarity,
+        'jElement', chara.Element,
+        'jPath', chara.Path,
+        'jAffiliation', chara.Affiliation
+        ) AS Json1 FROM mycharacters chara WHERE isActive = 1";
 
     if ($name != "") {
         $query .= " AND CONTAINS(chara.Name, '" . $name . "')";
@@ -107,7 +114,7 @@ function GetCharactersFromSearch($dbConn, $name, $rarity, $element, $path, $affi
     }
 
     if ($affiliation != "") {
-        $query .= " AND CONTAINS(chara.affiliation, '" . $affiliation . "')";
+        $query .= " AND CONTAINS(chara.Affiliation, '" . $affiliation . "')";
     }
 
     $query .= ";";
