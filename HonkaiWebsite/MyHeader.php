@@ -95,6 +95,7 @@ mysqli_free_result($recordset);
 if ($_SESSION["isAAdmin"] == 1) {
     echo '  &nbsp; &nbsp;<a class="menuItems" href="CharactersPage.php">View Characters</a>';
     echo '  &nbsp; &nbsp;<a class="menuItems" href="ManageCharacterPage.php">Manage Characters</a>';
+    echo '  &nbsp; &nbsp;<a class="menuItems" href="addImages.php">Manage Images</a>';
     echo '  &nbsp; &nbsp;<a class="menuItems" href="Login.php">Login</a>';
 } else {
     echo '  &nbsp; &nbsp;<a class="menuItems" href="CharactersPage.php">View Characters</a>';

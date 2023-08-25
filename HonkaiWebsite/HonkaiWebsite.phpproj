@@ -6,4 +6,7 @@
     <EnvName>PHPDev</EnvName>
     <RuntimeVersion>8.2</RuntimeVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="img\" />
+  </ItemGroup>
 </Project>
