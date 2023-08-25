@@ -3,11 +3,14 @@ include_once "MyHeader.php";
 ?>
 <div class="charaThings">
     <div class="charaData" id="chara-data">
+        <img id="chara-img" src="" />
         <h3 id="chara-name"></h3>
         <h3 id="chara-rarity"></h3>
         <h3 id="chara-element"></h3>
         <h3 id="chara-path"></h3>
         <h3 id="chara-affiliation"></h3>
+        <img id="element-image" src="" />
+        <img id="path-image" src="" />
     </div>
 <li class="charaList" id="chara-list"></li>
 </div>
@@ -45,6 +48,9 @@ include_once "MyHeader.php";
         document.getElementById("chara-element").innerHTML = "Element: " + element;
         document.getElementById("chara-path").innerHTML = "Path: " + path;
         document.getElementById("chara-affiliation").innerHTML = "Affiliation: " + affiliation;
+        document["chara-img"].src = "img/" + name + "_Profile_Small.png";
+        document["element-image"].src = "img/PNG_Type_" + element + ".png";
+        document["path-image"].src = "img/PNG_Path_" + path + ".png";
     }
 </script>
 <?php
