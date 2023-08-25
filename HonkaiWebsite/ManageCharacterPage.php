@@ -44,14 +44,17 @@ Character's Affiliation : &nbsp;
 
     function onAddButtonClick() {
         addCharacter(document.getElementById("charName").value, document.getElementById("charRarity").value, document.getElementById("charElement").value, document.getElementById("charPath").value, document.getElementById("charAffiliation").value);
+        loadData();
     }
 
     function onEditButtonClick() {
         editCharacter(document.getElementById("charID").value, document.getElementById("charName").value, document.getElementById("charRarity").value, document.getElementById("charElement").value, document.getElementById("charPath").value, document.getElementById("charAffiliation").value);
+        loadData();
     }
 
     function onRemoveButtonClick() {
         removeCharacter(document.getElementById("charID").value);
+        loadData();
     }
 
     function addCharacter(charName, charRarity, charElement, charPath, charAffiliation) {
@@ -86,13 +89,13 @@ Character's Affiliation : &nbsp;
 
         // Loop through each json record and create the HTML
         for (index in myData) {
-            myReturn += "<tr><td>" + myData[index].jId + "</td><td>" +
-                myData[index].jName + "</td><td>" +
-                myData[index].jRarity + "</td><td>" +
-                myData[index].jElement + "</td><td>" +
-                myData[index].jPath + "</td><td>" +
-                myData[index].jAffiliation + "</td><td>" +
-                myData[index].jIsActive + "</td></tr>";
+            myReturn += "<tr><td>" + myData[index].jId + " </td><td>" +
+                myData[index].jName + "&nbsp;&nbsp;</td><td>" +
+                myData[index].jRarity + "&nbsp;&nbsp;</td><td>" +
+                myData[index].jElement +"&nbsp;&nbsp;</td><td>" +
+                myData[index].jPath + "&nbsp;&nbsp;</td><td>" +
+                myData[index].jAffiliation + "&nbsp;&nbsp;</td><td>" +
+                myData[index].jIsActive + "&nbsp;&nbsp;</td></tr>";
 
         }
         myReturn += "</table>";
