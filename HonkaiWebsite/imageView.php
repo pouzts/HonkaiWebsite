@@ -8,9 +8,16 @@ if (isset($_GET['image_id'])) {
     $result = $statement->get_result();
 
     $row = $result->fetch_assoc();
-    $im = imagecreatefrompng($row['imageData']);
+    $mystring = $row['imageType'];
+    $myimage = $row['imageData'];
+    $myType = gettype($myimage);
+    //$type = vartype($myimage);
+    //$im = imagecreatefrompng($row['imageData']);
     $header = "Content-type: " . $row["imageType"];
     header($header);
-    imagepng($im);
+    //imagepng($myimage);
+    echo $row['imageData'];
+    //echo $im;
 }
+
 ?>
