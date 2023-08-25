@@ -7,7 +7,7 @@ $json = "";
 $row = null;
 $charId = "";
 
-if (array_key_exists("charId", $_GET) == TRUE) {
+if (array_key_exists("charId", $_GET)) {
     $dbConn = ConnGet();
     $charId = $_GET["charId"];
     $dataSet = GetCharacterDataById($dbConn, $charId);

@@ -2,7 +2,7 @@
 
 // Create constants
 DEFINE ('DB_USER', 'root');
-DEFINE ('DB_PSWD', 'Nu200342070'); //Change to your password
+DEFINE ('DB_PSWD', 'talos4'); //Change to your password
 DEFINE ('DB_SERVER', 'localhost');
 DEFINE ('DB_NAME', 'mytestdb');
 
@@ -72,20 +72,6 @@ function GetAllCharacterData($dbConn) {
     return @mysqli_query($dbConn, $query);
 }
 
-function GetAllCharacterDataJson($dbConn){
-    $query = "SELECT JSON_OBJECT(
-        'jId', chara.Id,
-        'jName', chara.Name,
-        'jRarity', chara.Rarity,
-        'jElement', chara.Element,
-        'jPath', chara.Path,
-        'jAffiliation', chara.Affiliation,
-        'jIsActive', chara.IsActive)
-        AS Json1 FROM mycharacters chara;";
-
-    return @mysqli_query($dbConn, $query);
-}
-
 function GetJsonFromDB($dbConn)
 {
     $query = "SELECT JSON_OBJECT(
@@ -96,6 +82,42 @@ function GetJsonFromDB($dbConn)
         'jPath', chara.Path,
         'jAffiliation', chara.Affiliation
         ) AS Json1 FROM mycharacters chara WHERE isActive = 1;";
+
+    return @mysqli_query($dbConn, $query);
+}
+
+function GetCharactersFromSearch($dbConn, $name, $rarity, $element, $path, $affiliation)
+{
+    $query = "SELECT JSON_OBJECT(
+        'jId', chara.Id,
+        'jName', chara.Name,
+        'jRarity', chara.Rarity,
+        'jElement', chara.Element,
+        'jPath', chara.Path,
+        'jAffiliation', chara.Affiliation
+        ) AS Json1 FROM mycharacters chara WHERE isActive = 1";
+
+    if ($name != "") {
+        $query .= " AND CONTAINS(chara.Name, '" . $name . "')";
+    }
+
+    if ($rarity != "") {
+        $query .= " AND CONTAINS(chara.Rarity, '" . $rarity . "')";
+    }
+
+    if ($element != "") {
+        $query .= " AND CONTAINS(chara.Element, '" . $element . "')";
+    }
+
+    if ($path != "") {
+        $query .= " AND CONTAINS(chara.Path, '" . $path . "')";
+    }
+
+    if ($affiliation != "") {
+        $query .= " AND CONTAINS(chara.Affiliation, '" . $affiliation . "')";
+    }
+
+    $query .= ";";
 
     return @mysqli_query($dbConn, $query);
 }
@@ -117,8 +139,6 @@ function EditDataForCharacter($dbConn, $Id, $charName, $charRarity, $charElement
 
     return @mysqli_query($dbConn, $query);
 }
-
-
 ?>
 
 
