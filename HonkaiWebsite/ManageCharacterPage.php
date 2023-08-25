@@ -24,20 +24,37 @@ Character's Affiliation : &nbsp;
 </center>
 
 <p id="jsonData"></p>
+<div class="filler"></div>
+<center>
+    <p class="database" id="tableData"></p>
+</center>
 
 <script>
     var request = new XMLHttpRequest();
 
+    $(document).ready(function() {
+        loadData();
+    });
+
+    function loadData() {
+        request.open("GET", "../getCharacterTableQuery.php");
+        request.onload = loadTable;
+        request.send();
+    }
+
     function onAddButtonClick() {
         addCharacter(document.getElementById("charName").value, document.getElementById("charRarity").value, document.getElementById("charElement").value, document.getElementById("charPath").value, document.getElementById("charAffiliation").value);
+        loadData();
     }
 
     function onEditButtonClick() {
         editCharacter(document.getElementById("charID").value, document.getElementById("charName").value, document.getElementById("charRarity").value, document.getElementById("charElement").value, document.getElementById("charPath").value, document.getElementById("charAffiliation").value);
+        loadData();
     }
 
     function onRemoveButtonClick() {
         removeCharacter(document.getElementById("charID").value);
+        loadData();
     }
 
     function addCharacter(charName, charRarity, charElement, charPath, charAffiliation) {
@@ -57,6 +74,34 @@ Character's Affiliation : &nbsp;
         document.getElementById("jsonData").innerHTML = "Character Removed";
         request.send();
     }
+
+    function loadTable(evt) {
+        var myResponse;
+        var myData;
+        var myReturn = "<table><tr><td>ID &nbsp;  &nbsp; </td><td>Name &nbsp;  &nbsp; </td><td>Rarity &nbsp;  &nbsp; </td><td>Element &nbsp;  &nbsp; </td><td>Path &nbsp;  &nbsp; </td><td>Affiliation &nbsp;  &nbsp; </td><td>Is Active &nbsp;  &nbsp; </td></tr>";
+
+        myResponse = request.responseText;
+        //alert("A: " + myResponse); // Use for debugging
+        //document.getElementById("A").innerHTML = myResponse; // Display the json for debugging
+        myData = JSON.parse(myResponse);
+
+        //alert(myData);
+
+        // Loop through each json record and create the HTML
+        for (index in myData) {
+            myReturn += "<tr><td>" + myData[index].jId + " </td><td>" +
+                myData[index].jName + "&nbsp;&nbsp;</td><td>" +
+                myData[index].jRarity + "&nbsp;&nbsp;</td><td>" +
+                myData[index].jElement +"&nbsp;&nbsp;</td><td>" +
+                myData[index].jPath + "&nbsp;&nbsp;</td><td>" +
+                myData[index].jAffiliation + "&nbsp;&nbsp;</td><td>" +
+                myData[index].jIsActive + "&nbsp;&nbsp;</td></tr>";
+
+        }
+        myReturn += "</table>";
+        document.getElementById("tableData").innerHTML = myReturn; // Display table
+    }
+
 </script>
 
 <?php

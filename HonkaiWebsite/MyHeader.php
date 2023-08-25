@@ -19,8 +19,11 @@ if (isset($_SESSION["isAdmin"]) == false) {
 //set style
 if (isset($_POST['preferencesSet'])) {
     $myStyle = $_POST['preferencesSet'];
+
+    //You make me sad...
+    setcookie("MyStyle", $_POST['preferencesSet']);
 }
-// Check for style setting
+ //Check for style setting
 if (isset($_COOKIE["MyStyle"]) == true) {
     $myStyle = $_COOKIE["MyStyle"];
 } else {
@@ -50,6 +53,9 @@ $MyHeader = "HSR Team Builder";
             break;
         case "3":
             echo '<link rel="stylesheet" type="text/css"  href="/styles/myStyle3.css">';
+            break;
+        case "4":
+            echo '<link rel="stylesheet" type="text/css"  href="/styles/myStyle4.css">';
             break;
         default:
             echo '<link rel="stylesheet" type="text/css"  href="/styles/myStyle1.css">';
@@ -89,6 +95,7 @@ mysqli_free_result($recordset);
 if ($_SESSION["isAAdmin"] == 1) {
     echo '  &nbsp; &nbsp;<a class="menuItems" href="CharactersPage.php">View Characters</a>';
     echo '  &nbsp; &nbsp;<a class="menuItems" href="ManageCharacterPage.php">Manage Characters</a>';
+    echo '  &nbsp; &nbsp;<a class="menuItems" href="addImages.php">Manage Images</a>';
     echo '  &nbsp; &nbsp;<a class="menuItems" href="Login.php">Login</a>';
 } else {
     echo '  &nbsp; &nbsp;<a class="menuItems" href="CharactersPage.php">View Characters</a>';
