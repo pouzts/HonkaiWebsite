@@ -1,7 +1,8 @@
 <?php
 include_once "MyHeader.php";
 ?>
-<div class="charThings">
+<div>
+    <center>
     <div class="chara-search">
         <form class="search-bar">
             <label for="chara-name-search">Name</label>
@@ -37,6 +38,7 @@ include_once "MyHeader.php";
             <button id="search-button" onclick="searchCharacters()">Search</button>
         </form>
     </div>
+    </center>
     <div class="charData" id="chara-data">
         <h3 id="chara-name"></h3>
         <h3 id="chara-rarity"></h3>

@@ -146,21 +146,27 @@ body {
     background-color: var(--color-three); /* Gold */
   }
 
-.charaData {
-  padding-left: 25px;
-  padding-right: 25px;
-}
-
-.charaThings {
-  padding-left: 550px;
+.chara-search {
   padding-bottom: 50px;
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  grid-auto-rows: 25px;
-  row-gap: 15px;
 }
 
-  .charaThings button {
+  .chara-search input[type="text"] {
+    font-family: "M PLUS 1 Code", sans-serif;
+    font-size: 1.1rem;
+    height: 30px;
+    width: 250px;
+    border: none;
+  }
+
+  .chara-search select {
+    font-family: "M PLUS 1 Code", sans-serif;
+    font-size: 1.1rem;
+    height: 30px;
+    width: 250px;
+    border: none;
+  }
+
+  .chara-search button {
     background-color: var(--color-four);
     color: var(--color-one);
     border: none;
@@ -171,11 +177,18 @@ body {
     font-size: 1.1rem;
   }
 
-    .charaThings button:hover {
-      background-color: var(--color-three);
+    .chara-search button:hover {
+      background-color: var(--color-three); /* Gold */
     }
 
+.charData {
+  position: absolute;
+  left: 100px;
+}
+
 .charaList {
+  position: absolute;
+  right: 25px;
   display: grid;
   gap: 25px;
   grid-template-columns: auto auto auto;
@@ -183,6 +196,21 @@ body {
   width: 620px;
   overflow: auto;
 }
+
+  .charaList button {
+    background-color: var(--color-four);
+    color: var(--color-one);
+    border: none;
+    font-size: 1.1rem;
+    height: 50px;
+    width: 100px;
+    font-family: "M PLUS 1 Code", sans-serif;
+    font-size: 1.1rem;
+  }
+
+    .charaList button:hover {
+      background-color: var(--color-three); /* Gold */
+    }
 
 ::-webkit-scrollbar {
   width: 10px;
