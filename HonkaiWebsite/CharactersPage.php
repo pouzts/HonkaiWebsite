@@ -39,7 +39,6 @@ include_once "MyHeader.php";
         </form>
     </div>
     </center>
-    <img id="chara-img" src="" />
     <div class="charData" id="chara-data">
         <h3 id="chara-name"></h3>
         <h3 id="chara-rarity"></h3>
@@ -47,9 +46,12 @@ include_once "MyHeader.php";
         <h3 id="chara-path"></h3>
         <h3 id="chara-affiliation"></h3>
     </div>
-    <img id="element-img" src="" />
-    <img id="path-img" src="" />
     <li class="charaList" id="chara-list"></li>
+    <center class="photos">
+    <img class="charaSplash" id="chara-img" src="img/Invis.png" />
+    <img class="charaElement" id="element-img" src="img/PNG_Type_Invis.png" />
+    <img class="charaPath" id="path-img" src="img/PNG_Path_Invis.png" />
+    </center>
 </div>
 
     <script>
@@ -106,16 +108,18 @@ include_once "MyHeader.php";
         document.getElementById("chara-path").innerHTML = "Path: " + path;
         document.getElementById("chara-affiliation").innerHTML = "Affiliation: " + affiliation;
 
+        //alert(name + " " + element + " " + path);
+
         var character = document.getElementById("chara-img");
-        character.src = "img/" + name + "_Profile_Small.png"
+        character.src = "img/" + name.replace(' ', '').trim() + "_Splash.png"
 
-        var element = document.getElementById("element-img");
-        element.src = "img/PNG_Type_" + element + ".png";
+        var elementImg = document.getElementById("element-img");
+        elementImg.src = "img/PNG_Type_" + element.replace(' ', '').trim() + ".png";
 
-        var path = document.getElementById("path-img");
-        path.src = "img/PNG_Path_" + path + ".png";
+        var pathImg = document.getElementById("path-img");
+        pathImg.src = "img/PNG_Path_" + path.replace(' ', '').trim() + ".png";
     }
     </script>
 <?php
 include_once "MyFooter.php"
-?>
+    ?>

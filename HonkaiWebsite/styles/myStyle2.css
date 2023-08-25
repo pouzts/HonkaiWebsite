@@ -154,7 +154,7 @@ body {
     font-family: "M PLUS 1 Code", sans-serif;
     font-size: 1.1rem;
     height: 30px;
-    width: 250px;
+    width: 150px;
     border: none;
   }
 
@@ -162,7 +162,7 @@ body {
     font-family: "M PLUS 1 Code", sans-serif;
     font-size: 1.1rem;
     height: 30px;
-    width: 250px;
+    width: 150px;
     border: none;
   }
 
@@ -188,9 +188,9 @@ body {
 
 .charaList {
   position: absolute;
-  right: 25px;
+  right: 5px;
   display: grid;
-  gap: 25px;
+  gap: 5px;
   grid-template-columns: auto auto auto;
   height: 600px;
   width: 620px;
@@ -239,4 +239,31 @@ body {
   height: 400px;
   width: 850px;
   overflow: auto;
+}
+
+.photos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.charaSplash {
+  position: relative;
+  height: 450px;
+  width: 450px;
+  grid-area: 1 / 2 / 2 / 4;
+}
+
+.charaElement {
+  height: 70px;
+  width: 70px;
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.charaPath {
+  height: 70px;
+  width: 70px;
+  grid-area: 2 / 3 / 3 / 4;
 }
