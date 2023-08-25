@@ -72,17 +72,22 @@ include_once "MyHeader.php";
         for (let i = 0; i < rarities.length; i++) {
             if (rarities[i].checked) {
                 rarity = rarities[i].value;
+                break;
             }
         }
         
-        request.open("GET", "../getAllCharactersQuery.php?charaName=" + name + "&charaRarity=" + rarity + "&charaElement=" + element
-            + "&charaPath=" + path + "&charaAffiliation=" + affiliaton);
+        request.open("GET", "../getCharacterFromSearchQuery.php?chara-name-search=" + name + "&chara-rarity-search=" + rarity + "&chara-element-search=" + element
+            + "&chara-path-search=" + path + "&chara-affiliation-search=" + affiliaton);
+        request.onload = loadCharacters;
         request.send();
     }
 
     function loadCharacters(evt) {
         let ret = "";
         let response = request.responseText;
+
+        console.log(response);
+
         let data = JSON.parse(response);
 
         for (index in data) {

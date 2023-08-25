@@ -97,24 +97,24 @@ function GetCharactersFromSearch($dbConn, $name, $rarity, $element, $path, $affi
         'jAffiliation', chara.Affiliation
         ) AS Json1 FROM mycharacters chara WHERE isActive = 1";
 
-    if ($name != "") {
-        $query .= " AND CONTAINS(chara.Name, '" . $name . "')";
+    if (!empty($name)) {
+        $query .= " AND chara.Name LIKE '%" . $name . "%'";
     }
 
-    if ($rarity != "") {
-        $query .= " AND CONTAINS(chara.Rarity, '" . $rarity . "')";
+    if (!empty($rarity)) {
+        $query .= " AND chara.Rarity = " . $rarity . "";
     }
 
-    if ($element != "") {
-        $query .= " AND CONTAINS(chara.Element, '" . $element . "')";
+    if (!empty($element)) {
+        $query .= " AND chara.Element LIKE '%" . $element . "%'";
     }
 
-    if ($path != "") {
-        $query .= " AND CONTAINS(chara.Path, '" . $path . "')";
+    if (!empty($path)) {
+        $query .= " AND chara.Element LIKE '%" . $path . "%'";
     }
 
-    if ($affiliation != "") {
-        $query .= " AND CONTAINS(chara.Affiliation, '" . $affiliation . "')";
+    if (!empty($affiliation)) {
+        $query .= " AND chara.Affiliation LIKE '%" . $affiliation . "%'";
     }
 
     $query .= ";";
