@@ -39,6 +39,7 @@ include_once "MyHeader.php";
         </form>
     </div>
     </center>
+    <img id="chara-img" src="" />
     <div class="charData" id="chara-data">
         <h3 id="chara-name"></h3>
         <h3 id="chara-rarity"></h3>
@@ -46,6 +47,8 @@ include_once "MyHeader.php";
         <h3 id="chara-path"></h3>
         <h3 id="chara-affiliation"></h3>
     </div>
+    <img id="element-img" src="" />
+    <img id="path-img" src="" />
     <li class="charaList" id="chara-list"></li>
 </div>
 
@@ -102,6 +105,15 @@ include_once "MyHeader.php";
         document.getElementById("chara-element").innerHTML = "Element: " + element;
         document.getElementById("chara-path").innerHTML = "Path: " + path;
         document.getElementById("chara-affiliation").innerHTML = "Affiliation: " + affiliation;
+
+        var character = document.getElementById("chara-img");
+        character.src = "img/" + name + "_Profile_Small.png"
+
+        var element = document.getElementById("element-img");
+        element.src = "img/PNG_Type_" + element + ".png";
+
+        var path = document.getElementById("path-img");
+        path.src = "img/PNG_Path_" + path + ".png";
     }
     </script>
 <?php
