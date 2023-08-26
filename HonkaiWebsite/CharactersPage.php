@@ -4,9 +4,9 @@ include_once "MyHeader.php";
 <div>
     <center>
     <div class="chara-search">
-        <form class="search-bar">
-            <label for="chara-name-search">Name</label>
+        <label for="chara-name-search">Name</label>
             <input type="text" name="chara-name-search" id="chara-name-search" value="" />
+            <label for="chara-rarity-search">Rarity</label>
             <label for="chara-rarity-search">5 Star</label>
             <input type="radio" id="chara-rarity-search" name="chara-rarity-search" value="5"/>
             <label for="chara-rarity-search">4 Star</label>
@@ -36,7 +36,6 @@ include_once "MyHeader.php";
             <label for="chara-affiliation-search">Affiliation</label>
             <input type="text" name="chara-affiliation-search" id="chara-affiliation-search" value=""/>
             <button id="search-button" onclick="searchCharacters()">Search</button>
-        </form>
     </div>
     </center>
     <div class="charData" id="chara-data">
@@ -69,10 +68,10 @@ include_once "MyHeader.php";
 
     function searchCharacters() {
         let name = document.getElementById("chara-name-search").value;
-        let element = document.getElementsByName("chara-element-search").value;
         let rarity = "";
-        let path = document.getElementsByName("chara-path-search").value;
-        let affiliaton = document.getElementsByName("chara-affiliation-search").value;
+        let element = document.getElementById("chara-element-search").value;
+        let path = document.getElementById("chara-path-search").value;
+        let affiliaton = document.getElementById("chara-affiliation-search").value;
 
         // Go through the radio buttons.
         let rarities = document.getElementsByName("chara-rarity-search");
@@ -92,8 +91,6 @@ include_once "MyHeader.php";
     function loadCharacters(evt) {
         let ret = "";
         let response = request.responseText;
-
-        console.log(response);
 
         let data = JSON.parse(response);
 

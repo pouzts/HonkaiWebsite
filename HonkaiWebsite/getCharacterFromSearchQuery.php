@@ -20,18 +20,22 @@ if (array_key_exists("chara-rarity-search", $_GET)) {
 }
 
 if (array_key_exists("chara-element-search", $_GET)) {
-    $charElement = $_GET["chara-element-search"];
+    if ($_GET["chara-element-search"] != "None") {
+        $charElement = $_GET["chara-element-search"];
+    }
 }
 
 if (array_key_exists("chara-path-search", $_GET)) {
-    $charPath = $_GET["chara-path-search"];
+    if ($_GET["chara-path-search"] != "None") {
+        $charPath = $_GET["chara-path-search"];
+    }
 }
 
 if (array_key_exists("chara-affiliation-search", $_GET)) {
     $charAffiliation = $_GET["chara-affiliation-search"];
 }
 
-$jsonResult = GetCharactersFromSearch($dbConn, $charName, $charRarity, $charRarity, $path, $charAffiliation);
+$jsonResult = GetCharactersFromSearch($dbConn, $charName, $charRarity, $charElement, $path, $charAffiliation);
 $row = null;
 $json = null;
 
