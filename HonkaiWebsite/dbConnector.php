@@ -2,7 +2,7 @@
 
 // Create constants
 DEFINE ('DB_USER', 'root');
-DEFINE ('DB_PSWD', ''); //Change to your password
+DEFINE ('DB_PSWD', 'talos4'); //Change to your password
 DEFINE ('DB_SERVER', 'localhost');
 DEFINE ('DB_NAME', 'mytestdb');
 
@@ -96,6 +96,42 @@ function GetJsonFromDB($dbConn)
         'jPath', chara.Path,
         'jAffiliation', chara.Affiliation
         ) AS Json1 FROM mycharacters chara WHERE isActive = 1;";
+
+    return @mysqli_query($dbConn, $query);
+}
+
+function GetCharactersFromSearch($dbConn, $name, $rarity, $element, $path, $affiliation)
+{
+    $query = "SELECT JSON_OBJECT(
+        'jId', chara.Id,
+        'jName', chara.Name,
+        'jRarity', chara.Rarity,
+        'jElement', chara.Element,
+        'jPath', chara.Path,
+        'jAffiliation', chara.Affiliation
+        ) AS Json1 FROM mycharacters chara WHERE isActive = 1";
+
+    if (isset($name) && !empty($name)) {
+        $query .= " AND chara.Name LIKE '%" . $name . "%'";
+    }
+
+    if (isset($rarity) && !empty($rarity)) {
+        $query .= " AND chara.Rarity = " . $rarity;
+    }
+
+    if (isset($element) && !empty($element)) {
+        $query .= " AND chara.Element = '" . $element . "'";
+    }
+
+    if (isset($path) && !empty($path)) {
+        $query .= " AND chara.Element = '" . $path . "'";
+    }
+
+    if (isset($affiliation) && !empty($affiliation)) {
+        $query .= " AND chara.Affiliation LIKE '%" . $affiliation . "%'";
+    }
+
+    $query .= ";";
 
     return @mysqli_query($dbConn, $query);
 }
